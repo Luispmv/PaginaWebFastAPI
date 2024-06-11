@@ -36,7 +36,7 @@ obteniendoCategorias(data =>{
 //         });
 // }
 
-// obteniendoCategorias(data => {
-//     console.log(data);
-// });
+obteniendoCategorias(data => {
+    console.log(data);
+});
 
