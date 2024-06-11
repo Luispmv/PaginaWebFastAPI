@@ -229,7 +229,9 @@ section{
             <span class="itemCategoria">Ejemplo Categoria</span>
         </div>
         <div class="categorias-grid">
-            <button class="card-categories">
+
+            <!-- Todos estos son nuestros templates strings -->
+            <button class="card-categories" id="botoncillo">
                 <img src="./icons/fantasy.svg" alt="">
                 <p>Fantasia</p>
             </button>
@@ -245,15 +247,13 @@ section{
                 <img src="./icons/planet.svg" alt="">
                 <p>Astronomia</p>
             </button>
+            <!-- Todos estos son nuestros templates strings -->
+
+
+
         </div>
     </section>
-    <script>
-        botontoggle = document.getElementById("toggleBtn")
-        dropdown = document.querySelector(".hide")
-
-        botontoggle.addEventListener("click", function(){
-            dropdown.classList.toggle("hide");
-        })
+    <script src="./index.js">
     </script>
 </body>
 </html>
