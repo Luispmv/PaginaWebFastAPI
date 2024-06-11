@@ -29,6 +29,49 @@ nav a{
     background: none;
     padding: 1rem;
 }
+#dropdown-categorias{
+    color: white;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+    place-self: center;
+    font-size: 30px;
+}
+#dropdown-categorias button{
+    background: none;
+    border: none;
+}
+
+.category-toggle{
+    width: 90%;
+    display: grid;
+    place-self: center;
+    height: 240px;
+    overflow: auto;
+}
+.category-toggle .itemCategoria{
+    width: 100%;
+    height: 60px;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid;
+    cursor: pointer;
+}
+.itemCategoria:hover{
+    background-color: black;
+    color: white;
+    transition: 0.2s all ease-in-out;
+}
+.hide{
+    display: none;
+}
 main{
     display: grid;
     place-items: center;
@@ -85,6 +128,16 @@ main{
     <nav>
         <a href="./index.html">Biblioteca</a>
     </nav>
+    <div id="dropdown-categorias">
+        Categorias
+        <button id="toggleBtn"><img src="./icons/down.svg" alt=""></button>
+    </div>
+    <div class="category-toggle hide">
+        <!-- <span class="itemCategoria">Ejemplo Categoria</span>
+        <span class="itemCategoria">Ejemplo Categoria</span>
+        <span class="itemCategoria">Ejemplo Categoria</span>
+        <span class="itemCategoria">Ejemplo Categoria</span> -->
+    </div>
     <main>
         
     </main>
