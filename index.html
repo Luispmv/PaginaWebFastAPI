@@ -55,34 +55,7 @@ a{
     top: 0;
     width: 100%;
 }
-.search-div{
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: solid;
-    border-color: var(--textColor);
-    align-self: center;
-    position: absolute;
-    height: 60px;
-    align-items: center;
-}
-.search-div input{
-    width: 90%;
-    background: none;
-    border: none;
-    outline: none;
-    color: var(--textColor);
-    font-size: 25px;
-}
-.search-div input::placeholder{
-    color: white;
-    font-size: 25px;
-}
-.search-div button{
-    background: none;
-    border: none;
-    display: flex;
-}
+
 
 .category-toggle{
     width: 90%;
@@ -110,55 +83,16 @@ a{
 }
 
 #view-button{
-    background-color: white;
-    color: black;
     width: 90%;
+    border-bottom: solid;
+    border-color: var(--textColor);
+    align-self: center;
+    position: absolute;
     height: 60px;
-    font-size: 25px;
-    border: none;
-}
-section{
-    display: grid;
-    width: 100%;
-    place-items: center;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-#dropdown-categorias{
-    place-self: center;
-    display: flex;
-    width: 90%;
-    justify-content: space-between;
     align-items: center;
-    color: white;
-    font-size: 25px;
+    text-align: center;
 }
-#dropdown-categorias button{
-    border: none;
-    background: none;
-}
-.categorias-grid{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-    width: 90%;
-    gap: 10px;
-}
-.card-categories{
-    background: none;
-    border: solid;
-    color: white;
-    font-size: 20px;
-    width: 100%;
-    height: 100%;
-    border-color: white;
-    margin-top: 10px;
-    cursor: pointer;
-}
-.card-categories img{
-    width: 80px;
-    height: 80px;
-}
+
 
 @media(min-width:768px){
     .imgMobile{
@@ -167,20 +101,9 @@ section{
     .imgTablet{
         display: block;
     }
-    .search-div{
-        width: 60%;
-    }
     #view-button{
         width: 60%;
-    }
-    #dropdown-categorias{
-        width: 60%;
-    }
-    .category-toggle{
-        width: 60%;
-    }    
-    .categorias-grid{
-        width: 60%;
+        font-size: 35px;
     }
 }
 
@@ -191,21 +114,8 @@ section{
     .imgDesktop{
         display: block;
     }
-    .search-div{
-        width: 700px;
-    }
     #view-button{
         width: 700px;
-    }
-    #dropdown-categorias{
-        width: 700px;
-    }
-    .category-toggle{
-        width: 700px;
-    }  
-    .categorias-grid{
-        width: 700px;
-        grid-template-columns: repeat(4, 1fr);
     }
 }
 </style>
@@ -217,35 +127,7 @@ section{
         <img class="imgMobile" src="./images/mobile-photo.png" alt="">
         <img class="imgTablet" src="./images/tablet-photo.png" alt="">
         <img class="imgDesktop" src="./images/desktop-photo.png" alt="">
-        <div class="search-div">
-            <input type="search" placeholder="Busca un libro">
-            <button><img src="./icons/search.svg" alt=""></button>
-        </div>
+        <button id="view-button" onclick="window.location.href='./libros.html'">Ver todos los libros</button>
     </header>
-    <button id="view-button" onclick="window.location.href='./libros.html'">Ver todos los libros</button>
-    <section>
-        <div id="dropdown-categorias">
-            Categorias
-            <button id="toggleBtn"><img src="./icons/down.svg" alt=""></button>
-        </div>
-
-        <div class="category-toggle hide">
-            <!-- <span class="itemCategoria">Ejemplo Categoria</span>
-            <span class="itemCategoria">Ejemplo Categoria</span>
-            <span class="itemCategoria">Ejemplo Categoria</span>
-            <span class="itemCategoria">Ejemplo Categoria</span> -->
-        </div>
-        <div class="categorias-grid">
-
-          
-
-
-
-        </div>
-    </section>
-    <script src="./index.js">
-    </script>
 </body>
 </html>
-
-<!--  -->

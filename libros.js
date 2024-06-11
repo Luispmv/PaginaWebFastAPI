@@ -6,6 +6,10 @@ botontoggle = document.getElementById("toggleBtn")
 })
 
 
+
+
+
+//Funcion para obtener nuestros libros por categoria
 function librosPorCategoria(categoria, done) {
     const results = fetch(`http://137.184.185.43/libros?category=${categoria}`);
     results
@@ -43,14 +47,37 @@ obteniendoLibros(data => {
         const card_libros = document.createRange().createContextualFragment(
             `
             <div class="book-result-container">
+
+
+                <section class="info-book none">
+                    <h2>${libro.title}</h2>
+                    <div>
+                        <span>Categoria: ${libro.category}</span>
+                        <span>Año: ${libro.year}</span>
+                        <span>Autor:  ${libro.author}</span>
+                        <span>Paginas:  ${libro.num_pages}</span>
+                    </div>
+                </section>
+
+
                 <img src="${libro.image}" alt="">
-                <button>Ver libro</button>
+                <button>${libro.title}</button>
             </div>
             `
         );
 
         const main = document.querySelector("main"); 
         main.append(card_libros);
+    });
+    document.querySelectorAll(".book-result-container").forEach(containerBook => {
+        const infoBook = containerBook.querySelector(".info-book");
+        containerBook.addEventListener("mouseover", function() {
+            infoBook.classList.remove("none");
+        });
+
+        containerBook.addEventListener("mouseout", function() {
+            infoBook.classList.add("none");
+        });
     });
 });
 
@@ -68,25 +95,6 @@ listaCategorias(data => {
 
         const itemEspecifico = toggle.querySelector(`.${categoria.name}`);
         
-        // Agregar el event listener al nuevo span
-        // itemEspecifico.addEventListener('click', () => {
-        //     console.log(`${categoria.name} fue presionada`);
-        //     librosPorCategoria(categoria.name, (data) => {
-        //         console.log('Libros en la categoría:', categoria.name, data);
-
-        //         //Template string con los elementos pertenencientes a una categoria especifica
-        //         const itemsFiltro = document.createRange().createContextualFragment(
-        //             `
-        //             <div class="book-result-container">
-        //                 <img src="${categoria.image}" alt="">
-        //                 <button>PUTO</button>
-        //             </div>
-        //             `
-        //         );
-        //         const changeMain = document.querySelector("main")
-        //         changeMain.append(itemsFiltro)
-        //     });
-        // });
         itemEspecifico.addEventListener('click', () => {
             console.log(`${categoria.name} fue presionada`);
             librosPorCategoria(categoria.name, (data) => {
@@ -101,15 +109,52 @@ listaCategorias(data => {
                     const itemsFiltro = document.createRange().createContextualFragment(
                         `
                         <div class="book-result-container">
-                            <img src="${libro.image}" alt="${libro.title}">
+
+
+                            <section class="info-book none">
+                                <h2>${libro.title}</h2>
+                                <div>
+                                    <span>Categoria:  ${libro.category}</span>
+                                    <span>Año:  ${libro.year}</span>
+                                    <span>Autor: ${libro.author}</span>
+                                    <span>Paginas:  ${libro.num_pages}</span>
+                                </div>
+                            </section>
+
+
+                            <img src="${libro.image}" alt="">
                             <button>${libro.title}</button>
                         </div>
                         `
                     );
                     changeMain.append(itemsFiltro);
                 });
+
+                document.querySelectorAll(".book-result-container").forEach(containerBook => {
+                    const infoBook = containerBook.querySelector(".info-book");
+                    containerBook.addEventListener("mouseover", function() {
+                        infoBook.classList.remove("none");
+                    });
+            
+                    containerBook.addEventListener("mouseout", function() {
+                        infoBook.classList.add("none");
+                    });
+                });
+
             });
         });
+
+
+
+
     });
 });
 
+
+
+
+// containerBook = document.querySelector(".book-result-container")
+// infobook = document.querySelector(".none")
+// containerBook.addEventListener("click", function(){
+//     infobook.classList.toggle("none");
+// })
