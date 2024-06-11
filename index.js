@@ -32,6 +32,19 @@ obteniendoCategorias(data => {
     });
 });
 
+obteniendoCategorias(data => {
+    data.forEach(categoria => {
+        const items = document.createRange().createContextualFragment(
+            `
+            <span class="itemCategoria">${categoria.name}</span>
+            `
+        );
+
+        const toggle = document.querySelector(".category-toggle");
+        toggle.append(items);
+    });
+});
+
 
 
 
