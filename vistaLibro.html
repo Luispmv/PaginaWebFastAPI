@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>libro</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --fuente:"Jockey One", sans-serif;
+    --textColor: white;
+    font-family: var(--fuente);
+}
+body{
+    background-color: black;
+    display: grid;
+    gap: 20px;
+}
+nav a{
+    font-family: var(--fuente);
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+    background: none;
+    padding: 1rem;
+}
+
+main{
+    display: grid;
+    place-items: center;
+    margin-bottom: 30px;
+}
+.book-info-container{
+    width: 90%;
+}
+.book-info-container figure{
+    width: 100%;
+    position: relative;
+}
+.book-info-container figure img{
+    width: 100%;
+}
+.book-info-container figure span{
+    background-color: black;
+    color: var(--textColor);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.book-info-container section{
+    display: grid;
+    gap: 15px;
+}
+.book-info-container section header{
+    display: grid;
+    gap: 15px;
+    color: var(--textColor);
+}
+.book-info-container section header h1{
+    font-size: 40px;
+}
+.book-info-container section header p{
+    font-size: 20px;
+}
+.book-info-container section footer{
+    display: grid;
+    justify-content: space-between;
+    color: white;
+    font-size: 20px;
+}
+
+@media(min-width:768px){
+    .book-info-container{
+        width: 700px;
+    }
+    .book-info-container section header h1{
+        font-size: 60px;
+    }   
+    .book-info-container section header p{
+        font-size: 30px;
+    }
+    .book-info-container section footer{
+        font-size: 30px;
+    }
+}
+
+@media(min-width:1024px){
+    .book-info-container{
+        display: flex;
+        gap: 120px;
+        width: 80%;
+    }
+    .book-info-container figure{
+        width: 40%;
+    }
+    .book-info-container section {
+        display: flex;
+        flex-direction: column;
+    }
+    .book-info-container section header{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(min-width:1200px){
+    .book-info-container{
+        width: 1152px;
+    }
+    .book-info-container section header h1{
+        font-size: 120px;
+    }
+    .book-info-container section header p{
+        font-size: 50px;
+    }
+    .book-info-container section footer{
+        font-size: 25px;
+    }
+}
+</style>
+<body>
+    <nav>
+        <a href="./index.html">Biblioteca</a>
+    </nav>
+    <main>
+
+
+        
+        <div class="book-info-container">
+            <figure>
+                <img src="./images/example.png" alt="">
+                <span>id del libro</span>
+            </figure>
+            <section>
+                <header>
+                    <h1>Titulo del libro</h1>
+                    <p>Overview
+                    </p>
+                </header>
+                <footer>
+                    <span>Categoria</span>
+                    <span>Año</span>
+                    <span>Autor</span>
+                    <span>Paginas</span>
+                </footer>
+            </section>
+        </div>
+
+
+    </main>
+</body>
+</html>

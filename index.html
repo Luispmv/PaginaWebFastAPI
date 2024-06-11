@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --fuente:"Jockey One", sans-serif;
+    --textColor: white;
+    font-family: var(--fuente);
+}
+body{
+    background-color: black;
+    display: grid;
+    gap: 30px;
+    place-items: center;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+a{
+    font-family: var(--fuente);
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+    z-index: 1;
+    background: none;
+    position: absolute;
+    padding: 1rem;
+}
+.imgMobile{
+    /* position: absolute; */
+    top: 0;
+    width: 100%;
+}
+.imgTablet{
+    /* position: absolute; */
+    display: none;
+    top: 0;
+    width: 100%;
+}
+.imgDesktop{
+    /* position: absolute; */
+    display: none;
+    top: 0;
+    width: 100%;
+}
+.search-div{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid;
+    border-color: var(--textColor);
+    align-self: center;
+    position: absolute;
+    height: 60px;
+    align-items: center;
+}
+.search-div input{
+    width: 90%;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--textColor);
+    font-size: 25px;
+}
+.search-div input::placeholder{
+    color: white;
+    font-size: 25px;
+}
+.search-div button{
+    background: none;
+    border: none;
+    display: flex;
+}
+
+.category-toggle{
+    width: 90%;
+    display: grid;
+}
+.hide{
+    display: none;
+}
+
+.category-toggle .itemCategoria{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid;
+}
+
+#view-button{
+    background-color: white;
+    color: black;
+    width: 90%;
+    height: 60px;
+    font-size: 25px;
+    border: none;
+}
+section{
+    display: grid;
+    width: 100%;
+    place-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+#dropdown-categorias{
+    place-self: center;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+}
+#dropdown-categorias button{
+    border: none;
+    background: none;
+}
+.categorias-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    width: 90%;
+    gap: 10px;
+}
+.card-categories{
+    background: none;
+    border: solid;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    border-color: white;
+    margin-top: 10px;
+}
+.card-categories img{
+    width: 80px;
+    height: 80px;
+}
+
+@media(min-width:768px){
+    .imgMobile{
+        display: none;
+    }
+    .imgTablet{
+        display: block;
+    }
+    .search-div{
+        width: 60%;
+    }
+    #view-button{
+        width: 60%;
+    }
+    #dropdown-categorias{
+        width: 60%;
+    }
+    .category-toggle{
+        width: 60%;
+    }    
+    .categorias-grid{
+        width: 60%;
+    }
+}
+
+@media(min-width:1024px){
+    .imgTablet{
+        display: none;
+    }
+    .imgDesktop{
+        display: block;
+    }
+    .search-div{
+        width: 700px;
+    }
+    #view-button{
+        width: 700px;
+    }
+    #dropdown-categorias{
+        width: 700px;
+    }
+    .category-toggle{
+        width: 700px;
+    }  
+    .categorias-grid{
+        width: 700px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+</style>
+<body>
+    <header>
+        <nav>
+            <a href="">Biblioteca</a>
+        </nav>
+        <img class="imgMobile" src="./images/mobile-photo.png" alt="">
+        <img class="imgTablet" src="./images/tablet-photo.png" alt="">
+        <img class="imgDesktop" src="./images/desktop-photo.png" alt="">
+        <div class="search-div">
+            <input type="search" placeholder="Busca un libro">
+            <button><img src="./icons/search.svg" alt=""></button>
+        </div>
+    </header>
+    <button id="view-button" onclick="window.location.href='./libros.html'">Ver todos los libros</button>
+    <section>
+        <div id="dropdown-categorias">
+            Categorias
+            <button id="toggleBtn"><img src="./icons/down.svg" alt=""></button>
+        </div>
+
+        <div class="category-toggle hide">
+            <span class="itemCategoria">Ejemplo Categoria</span>
+            <span class="itemCategoria">Ejemplo Categoria</span>
+            <span class="itemCategoria">Ejemplo Categoria</span>
+            <span class="itemCategoria">Ejemplo Categoria</span>
+        </div>
+
+        <div class="categorias-grid">
+            <button class="card-categories">
+                <img src="./icons/fantasy.svg" alt="">
+                <p>Fantasia</p>
+            </button>
+            <button class="card-categories">
+                <img src="./icons/science.svg" alt="">
+                <p>Ciencia</p>
+            </button>
+            <button class="card-categories">
+                <img src="./icons/book.svg" alt="">
+                <p>Biografias</p>
+            </button>
+            <button class="card-categories">
+                <img src="./icons/planet.svg" alt="">
+                <p>Astronomia</p>
+            </button>
+        </div>
+    </section>
+    <script>
+        botontoggle = document.getElementById("toggleBtn")
+        dropdown = document.querySelector(".hide")
+
+        botontoggle.addEventListener("click", function(){
+            dropdown.classList.toggle("hide");
+        })
+    </script>
+</body>
+</html>

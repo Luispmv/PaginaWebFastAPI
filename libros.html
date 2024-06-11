@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>libros</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --fuente:"Jockey One", sans-serif;
+    --textColor: white;
+    font-family: var(--fuente);
+}
+body{
+    background-color: black;
+    display: grid;
+    gap: 20px;
+}
+nav a{
+    font-family: var(--fuente);
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+    background: none;
+    padding: 1rem;
+}
+main{
+    display: grid;
+    place-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.book-result-container{
+    width: 90%;
+    display: grid;
+    gap: 10px;
+}
+.book-result-container img{
+    width: 100%;
+}
+.book-result-container button{
+    height: 70px;
+    font-size: 25px;
+    background-color: var(--textColor);
+    color: black;
+    border: none;
+}
+
+@media(min-width:425px){
+    .book-result-container{
+        width: 384px;
+    } 
+}
+@media(min-width:600px){
+    main{
+        width: 90%;
+        grid-template-columns: repeat(3,1fr);
+        place-self: center;
+    }
+    .book-result-container{
+        width: 100%;
+    } 
+    .book-result-container button{
+        font-size: 30px;
+    }
+}
+@media(min-width:1440px){
+    main{
+        grid-template-columns: repeat(5,1fr);
+    }
+    .book-result-container button{
+        font-size: 45px;
+    }
+}
+</style>
+<body>
+    <nav>
+        <a href="./index.html">Biblioteca</a>
+    </nav>
+    <main>
+        <div class="book-result-container">
+            <img src="./images/example.png" alt="">
+            <button onclick="window.location.href='./vistaLibro.html'">Ver libro</button>
+        </div>
+        <div class="book-result-container">
+            <img src="./images/example.png" alt="">
+            <button onclick="window.location.href='./vistaLibro.html'">Ver libro</button>
+        </div>
+        <div class="book-result-container">
+            <img src="./images/example.png" alt="">
+            <button onclick="window.location.href='./vistaLibro.html'">Ver libro</button>
+        </div>
+        <div class="book-result-container">
+            <img src="./images/example.png" alt="">
+            <button onclick="window.location.href='./vistaLibro.html'">Ver libro</button>
+        </div>
+        <div class="book-result-container">
+            <img src="./images/example.png" alt="">
+            <button onclick="window.location.href='./vistaLibro.html'">Ver libro</button>
+        </div>
+        <div class="book-result-container">
+            <img src="./images/example.png" alt="">
+            <button onclick="window.location.href='./vistaLibro.html'">Ver libro</button>
+        </div>
+        <div class="book-result-container">
+            <img src="./images/example.png" alt="">
+            <button onclick="window.location.href='./vistaLibro.html'">Ver libro</button>
+        </div>
+        <div class="book-result-container">
+            <img src="./images/example.png" alt="">
+            <button onclick="window.location.href='./vistaLibro.html'">Ver libro</button>
+        </div>
+        <div class="book-result-container">
+            <img src="./images/example.png" alt="">
+            <button onclick="window.location.href='./vistaLibro.html'">Ver libro</button>
+        </div>
+        <div class="book-result-container">
+            <img src="./images/example.png" alt="">
+            <button onclick="window.location.href='./vistaLibro.html'">Ver libro</button>
+        </div>
+    </main>
+</body>
+</html>
